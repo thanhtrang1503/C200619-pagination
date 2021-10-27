@@ -39,7 +39,7 @@ try{
 <div class="container">
     <header>
        <div>
-            <h1>会員データ一覧</h1>
+            <h1>ユーザー一覧</h1>
        </div>
     </header>
 </div>
