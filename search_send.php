@@ -24,7 +24,7 @@
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="form-group">
                     <label for="name"><span >検索キーワード</span> </label>
-                    <input type="text" id="name" name="name" class="form-control" value="" placeholder="例：山田" autofocus required>
+                    <input type="text" id="name" name="name" class="form-control" value="" placeholder="例：山田" autofocus>
                 </div>
 
                 <div class="button-wrapper">
