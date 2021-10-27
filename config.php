@@ -8,4 +8,3 @@ define('DB_USER','root');
 define('DB_PASS','');
 /* PHPのエラーを表示するように設定 */
 error_reporting(E_ALL & ~E_NOTICE);
-}
