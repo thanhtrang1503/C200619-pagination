@@ -3,7 +3,7 @@
 define('DB_HOST','localhost');
 define('DB_NAME','lesson1');
 define('DB_CHAR','utf8mb4');
-define('DNS','mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset='.DB_CHAR.'');
+define('DSN','mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset='.DB_CHAR.'');
 define('DB_USER','root');
 define('DB_PASS','');
 /* PHPのエラーを表示するように設定 */
