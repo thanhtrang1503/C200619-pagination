@@ -10,14 +10,14 @@
     <div class="container">
         <header>
             <div>
-                    <h1>ユーザー検索登録</h1>
+                    <h1>ユーザー検索画面</h1>
             </div>
         </header>
     </div>
 
     <hr>
 
-<p>名前の一致する会員を検索し一覧で表示します</p>
+<p>名前の一致するユーザーを検索し一覧で表示します</p>
 
     <div class="container">
         <form action="search_receive.php" method="POST" class="row">
