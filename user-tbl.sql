@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS lesson1 DEFAULT CHARACTER SET utf8mb4;
+ï»¿CREATE DATABASE IF NOT EXISTS lesson1 DEFAULT CHARACTER SET utf8mb4;
 use lesson1;
 
 DROP TABLE IF EXISTS user;
@@ -11,10 +11,10 @@ CREATE TABLE user (
     updatedate datetime NULL ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY(id)
 ) DEFAULT CHARSET=utf8mb4;
-/* ƒeƒXƒgƒf[ƒ^“Š“ü */
-INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','R“cˆê˜Y',1);
-INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','R“cŸ˜Y',1);
-INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','‘¾“cŒ’ˆê',1);
-INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','¬ì‘¾˜Y',1);
-INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','‘¾“c‰Ôq',2);
-INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','¬ì‰Ôq',2);
+/* ãƒ†ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿æŠ•å…¥ */
+INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','å±±ç”°ä¸€éƒ',1);
+INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','å±±ç”°æ¬¡éƒ',1);
+INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','å¤ªç”°å¥ä¸€',1);
+INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','å°å·å¤ªéƒ',1);
+INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','å¤ªç”°èŠ±å­',2);
+INSERT INTO user (email, name, gender) VALUE ('ichiro@xxx.com','å°å·èŠ±å­',2);
