@@ -9,7 +9,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 $dbh = db_conn();
-
 $data = [];
 
 try{
