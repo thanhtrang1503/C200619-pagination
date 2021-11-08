@@ -2,7 +2,9 @@
 require_once("functions.php");
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST["name"])){
-        $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
+        if(!empty($_POST["name"])) {
+            $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
+        }
     }
 }
 
