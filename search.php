@@ -10,7 +10,7 @@
     <div class="container">
         <header>
             <div>
-                    <h1>ユーザー検索画面</h1>
+                    <h1>ユーザー検索画面 </h1>
             </div>
         </header>
     </div>
