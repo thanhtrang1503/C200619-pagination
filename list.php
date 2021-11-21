@@ -105,7 +105,10 @@ try{
         }
     }
 ?>
-</div> 
+</div>
+<div class="button-wrapper">
+    <button type="button" onclick="history.back()">戻る</button>
+</div>
 </form>
 <hr>
 <div class="container">
