@@ -1,10 +1,24 @@
 ﻿<?php
 require_once("functions.php");
+define('MAXITEM',5);
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST["name"])){
-        if(!empty($_POST["name"])) {
-            $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
-        }
+        $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
+    }
+    $page = 1;
+} elseif($_SERVER['REQUEST_METHOD'] === 'GET'){
+    if(isset($_GET["page"])){
+        $page = $_GET['page'];
+        $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
+    } else {
+        $page = 1;
+        $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
+    }
+
+    if($page > 1){
+        $start = ($page * MAXITEM) - MAXITEM;
+    } else {
+        $start = 0;
     }
 }
 
@@ -12,7 +26,7 @@ $dbh = db_conn();
 $data = [];
 
 try{
-    $sql = "SELECT * FROM user WHERE name like :name";
+    $sql = "SELECT * FROM user WHERE name like :name LIMIT {$start}, {MAXITEM}";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':name', '%'.$name.'%', PDO::PARAM_STR);
     $stmt->execute();
@@ -68,10 +82,30 @@ try{
     <?php endforeach; ?>
 </table>
 <p style="margin:8px;">
-<form action="" method="POST">
-<div class="button-wrapper">
-    <button type="button" onclick="history.back()">戻る</button>
-</div>
+<form action="" method="GET">
+<div>
+    <p>現在 <?php echo $page; ?> ページ目です。</p> 
+
+<?php
+   $stmt = $dbh->prepare("SELECT COUNT(*) id FROM user WHERE name like :name");
+   $stmt->bindValue(':name', '%'.$name.'%', PDO::PARAM_STR);
+   $stmt->execute();
+   $page_num = $stmt->fetchColumn(); 
+   // ページネーションの数を取得する 
+   $pagination = ceil($page_num / MAXITEM);
+?>
+<?php
+    for($x=1; $x <= $pagination; $x++){
+        if($x == 1){
+            echo $x;
+        } else{
+            echo ' ';
+            echo '<a href=?page='. $x. '&name='. $name.'>'. $x. '</a>';
+            echo ' ';
+        }
+    }
+?>
+</div> 
 </form>
 <hr>
 <div class="container">
